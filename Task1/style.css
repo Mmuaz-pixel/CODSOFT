@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show, .white {
+    color: white;
+}
+
+.navbar-brand:hover{
+    color: white; 
+    animation: animate2 1s ease-in-out forwards;
+}
+
+.nav-item{
+    margin: 0 10px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.nav-item:hover{
+    transform: scale(1.1);
+}
+
+.nav-item::after
+{
+    content: "";
+    opacity: 0;
+    left: 0; 
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background-color: red;
+    position: absolute;
+}
+
+.nav-item:hover::after
+{
+    opacity: 1;
+    animation-name: animate1;
+    animation-fill-mode: forwards;
+    animation-duration: .3s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animate1 {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes animate2 {
+    0%, 100%{
+        transform: scale(1);
+    }    
+    50%{
+        transform: scale(1.1);
+    }    
+}
+
+.btn 
+{
+    color: white; 
+}
+
+nav
+{
+    background: linear-gradient(to right, rgb(47, 24, 202), rgb(244, 29, 201)); 
+    width: 100%;
+}
+
+#front 
+{
+    top: 100px;
+    height: 90vh;
+    width: 100%;
+    background-image: url("download.jpeg"); 
+    background-size: cover;
+    background-position: center center;
+}
+
+.heading 
+{
+    height: 90vh;
+    width: 100%;
+}
+
+
+#heading_para 
+{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#heading_para h1{
+    margin: 5vh 7vw;
+    padding: 8px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 15px 15px rgb(67, 46, 162);
+}
+#heading_para p{
+    margin: 0 4vw;
+}
+
+#heading_para button{
+    margin: 5vh 4vw;
+    text-transform: uppercase;
+    font-size: larger;
+    font-family: 'consolas';
+    padding: 8px;
+    background: linear-gradient(to right, rgb(94, 47, 169), rgb(211, 57, 206));
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 15px 10px rgb(67, 46, 162);
+    transition: all .6s;
+}
+
+#heading_para button:hover{
+    box-shadow: 1px 2px 15px 5px rgb(55, 223, 209); 
+    color: white;
+}
